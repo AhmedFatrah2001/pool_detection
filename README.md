@@ -105,6 +105,43 @@ Example before & after pool detection:
 
 ---
 
+## 🌐 **Testing with Gradio**
+You can also test the model using a **Gradio interface** by running the following script:
+```bash
+python gradio_app.py
+```
+This will launch a web interface where you can upload images and see the pool detection results in real-time.
+
+### 🔹 **Gradio Interface Example**
+![Gradio Interface Example](assets/gradio.png)
+
+- The Gradio app provides an easy-to-use interface for testing the model without writing any code.
+- Simply upload an image, and the app will display the detected pools with red outlines.
+
+---
+
+## 🌐 **Using the Flask Server**
+You can also use the `server.py` script to run a Flask server that takes an image and returns an image with the pool outlined.
+
+### 🔹 **Running the Flask Server**
+```bash
+python server.py
+```
+
+### 🔹 **Using the Flask Server**
+Once the server is running, you can send a POST request with an image to the server and receive the processed image in response.
+
+Example using `curl`:
+```bash
+curl -X POST -F "file=@test_images/test1.jpg" http://127.0.0.1:5000/detect -o output_image.jpg
+```
+
+- The server will process the image and return the result with detected pools outlined in red.
+
+---
+
+
+
 ## 📖 **References**
 - **Ultralytics YOLOv8**: [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
 - **Dataset Source**: [Swimming Pool Detection - Algarve's Landscape](https://www.kaggle.com/datasets/cici118/swimming-pool-detection-algarves-landscape)
@@ -112,13 +149,3 @@ Example before & after pool detection:
 
 ---
 
-## 📝 **Notes**
-- If the dataset path is incorrect, update it in `data.yaml`:
-  ```yaml
-  train: labeled_data/train/images
-  val: labeled_data/valid/images
-  test: labeled_data/test/images
-  nc: 1
-  names: ['pool']
-  ```
-- **For better accuracy**, retrain the model with **more data** or **higher epochs**.
