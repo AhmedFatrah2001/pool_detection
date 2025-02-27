@@ -141,6 +141,18 @@ curl -X POST -F "file=@test_images/test1.jpg" http://127.0.0.1:5000/detect -o ou
 ---
 
 
+## 🌐 **Try it on Hugging Face**
+You can also try the model online without setting it up or installing anything by visiting the Hugging Face Space:
+[Try Pool Detection on Hugging Face](https://huggingface.co/spaces/ahmedFatrah/pool_detection)
+
+- This space provides an interactive interface to upload images and see the pool detection results instantly.
+- It's a convenient way to test the model before setting it up locally.
+
+---
+
+
+
+
 
 ## 📖 **References**
 - **Ultralytics YOLOv8**: [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
